@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class NumberGame {
+    public static void main(String[] args) {
+        int numberToGuess = (int) (Math.random() * 100);
+        int numberOfTries = 0;
+        Scanner input = new Scanner(System.in);
+        int guess;
+
+        while (true) {
+            System.out.println("Guess a number between 1 and 100:");
+            guess = input.nextInt();
+            numberOfTries++;
+
+            if (guess == numberToGuess) {
+                System.out.println("Congratulations! You found the number in " + numberOfTries + " tries.");
+                break;
+            } else if (guess < numberToGuess) {
+                System.out.println("Too low! Try again.");
+            } else {
+                System.out.println("Too high! Try again.");
+            }
+        }
+    }
+}
